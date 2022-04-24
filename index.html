@@ -26,13 +26,14 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-light navbar-custom sticky-top">
             <div class="container px-0 pt-0 pb-0">
                 <a class="navbar-brand" href="#">
-                    <img class="img-fluid" src="images/logo2.png" alt="..." width="65" height="40" />
+                    <img class="img-fluid" src="images/logo2.png" alt="..." width="120" height="50" />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="fa fa-navicon" style="color:#212529; font-size:30px;"></i></span></button>
                 <div class="collapse navbar-collapse" id="navbarPrimary">
                     <ul class="navbar-nav ms-auto">
-                        <button type="button"  class="btn btn-light" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</button>
-                        <button type="button"  class="btn btn-light" data-bs-toggle="modal" data-bs-target="#login">Log In</button>
+                        <li><button type="button"  class="btn btn-light" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</button></li>
+                        <li><button type="button"  class="btn btn-light" data-bs-toggle="modal" data-bs-target="#login">Log In</button></li>
                     </ul>
                 </div>
             </div>
@@ -120,16 +121,16 @@
                 <a class="navbar-brand" href="#">
                     <img class="img-fluid" src="images/home-5-256.ico" alt="..." width="25" height="25" />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
-                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+                    </button>
+
                 <div class="collapse navbar-collapse" id="navbarSecondary">
                     <ul class="navbar-nav text-uppercase  py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#statistics">Statistics</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#search">Search</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Category3</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Category4</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -153,9 +154,9 @@
 
             <!-- The slideshow/carousel -->
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active" >
                     <img src="images/art.jpg" alt="Los Angeles" class="d-block w-100" width="100" height="500">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption" id="carItem">
                         <h3>Los Angeles</h3>
                         <p>We had such a great time in LA!</p>
                     </div>
@@ -200,7 +201,7 @@
             <div id="content">
                 <form class='form-inline'>
                     <div class="input-group">
-                        <input type='text' id='search' class="form-control search-form" placeholder="Scooby Doo">
+                        <input type='text' id="search" class="form-control search-form" placeholder="Scooby Doo">
                         <span class="input-group-btn" style="width:39px">
               <button id="search-this"type="button"  class="pull-right btn btn-default search-btn" href="articles.html">
                   <i class="fa fa-search" ></i>
@@ -208,43 +209,28 @@
             </span>
                     </div>
                 </form>
-
                 <p class="text-center">Some centered text</p>
-
-
             </div>
         </div>
 
 
-        <section class="page-section" id="services">
+        <section class="page-section" id="statistics">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Statistics</h2>
+                    <br>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">E-Commerce</h4>
+                        <h4 class="my-3">Stat1</h4>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                     </div>
                     <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Responsive Design</h4>
+                        <h4 class="my-3">Stat2</h4>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                     </div>
                     <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Web Security</h4>
+                        <h4 class="my-3">Stat3</h4>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                     </div>
                 </div>
@@ -253,9 +239,9 @@
 
 
 
-        <br><br><br><br><br><br>
+        <br><br><br><br>
 
-        <div class="d-flex flex-column align-items-center">
+        <div class="d-flex flex-column align-items-center" id="contact">
             <h4 class="mb-4">Follow us</h4>
 
             <ul>
