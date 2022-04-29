@@ -27,7 +27,6 @@
       <a class="navbar-brand" href="#">
         <img class="img-fluid" src="images/logo2.png" alt="..." width="120" height="50" />
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarPrimary">
         <ul class="navbar-nav ms-auto">
           <a href="website link here!!"><img src="images/IMG_20210926_170647.jpg" alt="pfp" style="width:42px;height:42px;border-radius: 24px"></a>
@@ -52,18 +51,31 @@
       <a class="navbar-brand" href="index.html">
         <img class="img-fluid" src="images/home-5-256.ico" alt="..." width="25" height="25" />
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars ms-1"></i>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSecondary" aria-controls="navbarResponsive"
+              aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon2"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarSecondary">
         <ul class="navbar-nav text-uppercase  py-4 py-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#statistics">Humanities</a></li>
+          <li class="nav-item"><a class="nav-link" href="#content">Social Sciences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Natural Sciences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Formal Sciences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Applied Sciences</a></li>
         </ul>
+      </div>
+
+      <div class="search">
+        <form action="#">
+          <input type="text"
+                 placeholder=" Search Courses"
+                 name="search">
+          <button>
+            <i class="fa fa-search"
+               style="font-size: 18px;">
+            </i>
+          </button>
+        </form>
       </div>
     </div>
   </nav>
@@ -89,25 +101,39 @@
       <div class="col-2  border-end border-5 border-dark">
         <main>
           <div class="space50"></div>
-          <h1><u>Read Next</u></h1>
+          <h1>Personal Stats</h1>
           <div class="space50"></div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor imperdiet auctor. Etiam quis hendrerit lectus. Vestibulum sollicitudin ligula eu elit egestas blandit. Nulla enim est, fringilla et metus eu, rutrum porttitor velit. Sed rhoncus, nisl ut egestas tristique, dui neque rutrum enim, a efficitur turpis sapien vitae mi. Sed porta bibendum orci ut ultricies. Proin sollicitudin tortor in augue tempor, eget ornare ligula fringilla. Nulla rutrum vestibulum nibh vitae pulvinar. Donec pulvinar sem a mi cursus, id gravida felis placerat. Proin laoreet augue eleifend ligula iaculis, quis condimentum nunc rhoncus. Cras gravida ante eget tristique hendrerit. Suspendisse nec auctor odio. Proin blandit congue turpis, ultricies tincidunt urna ultricies eu.
 
-          </p>
+          <h4>Posted:</h4>
+          <p>3</p>
+
+          <h4>Pending:</h4>
+          <p>3</p>
+
+
         </main>
       </div>
       <div class="col-10">
+
+
         <div class="space50"></div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#btnacc"
-                aria-expanded="true" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="fa fa-navicon" style="color:#212529; font-size:30px;"></i></span></button>
-        <div class="collapse navbar-collapse" id="btnacc">
-          <ul>
-            <li><button type="button"  class="btn btn-dark btn-acc" data-bs-toggle="modal" >Sign Up</button></li>
-            <li><button type="button"  class="btn btn-light2 btn-acc" data-bs-toggle="modal" >Log In</button></li>
-            <li><button type="button"  class="btn btn-light2 btn-acc" data-bs-toggle="modal" >Sign Up</button></li>
-            <li><button type="button"  class="btn btn-light2 btn-acc" data-bs-toggle="modal" >Log In</button></li>
-          </ul>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container pt-0 pb-0">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#btnacc" aria-controls="navbarResponsive"
+                    aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="btnacc">
+              <ul>
+                <li class="nav-item"><button type="button"  class="btn btn-dark btn-acc" data-bs-toggle="modal" >My articles</button></li>
+                <li class="nav-item"><button type="button"  class="btn btn-light2 btn-acc" data-bs-toggle="modal" >New article</button></li>
+                <li class="nav-item"><button type="button"  class="btn btn-light2 btn-acc" data-bs-toggle="modal" >Pending approval</button></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+
 
       </div>
     </div>
