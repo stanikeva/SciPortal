@@ -6907,6 +6907,7 @@ textarea.form-control-lg {
 
 .border-end {
   border-right: 1px solid #dee2e6 !important;
+
 }
 
 .border-end-0 {
@@ -11434,7 +11435,6 @@ header.masthead h1, header.masthead .h1 {
 .call-to-action {
   position: relative;
   background-color: #343a40;
-  background: url("../assets/img/bg-masthead.jpg") no-repeat center center;
   background-size: cover;
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -11573,7 +11573,7 @@ p,h3{
   grid-template-columns:  100%;
   /*grid-template-columns: auto 300px;*/
   grid-column-gap: 30px;
-  border-left: 2px solid gray;navbar-expand-lg
+  border-left: 2px solid gray;
   height: 100%;
   position:absolute;
   left: 80%;
@@ -11585,7 +11585,7 @@ p,h3{
   padding-top: 100px;
 }
 
-.btn-light2 {  width: 100%;
+.btn-light2 {  width: 100%;ffff00
 
   color: #000;
   background-color: #dddddc;
@@ -11610,3 +11610,32 @@ p,h3{
 .btn-clr{
   color: #ffffee;
 }
+
+
+.btn-clr:hover {
+  color: #9d9d9d;
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.card3 {
+  position: relative;
+  min-width: 0;
+  width: 70%;
+  height: 50%;
+  text-align: center;
+  background: rgb(220, 220, 220,1);
+  border-radius: 10px;
+  box-shadow: 0px 10px 40px #1b1c1b;
+  margin-bottom: 30px;
+}
+
+.h1, .h4, .p{
+  word-break: break-word;
+}
+
+
+
+
+
+
