@@ -11611,8 +11611,16 @@ p,h3{
   word-break: break-word;
 }
 
+.social-facebook:hover{
+  color: #0a53be;
+}
 
+.social-instagram:hover
+{
+  color:  #fe3d13 ;
+}
 
-
-
-
+.social-twitter:hover
+{
+  color: #41aac5;
+}
