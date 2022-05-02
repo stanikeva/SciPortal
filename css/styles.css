@@ -99,7 +99,8 @@ body {
   color: #fff;
   font-size: 27px;
   margin-right: 11px;
-  cursor: pointer
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .social-twitter {
