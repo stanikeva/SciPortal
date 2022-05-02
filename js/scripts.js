@@ -1,6 +1,5 @@
 import("account.html")
 
-
     function showContent(a,b,c)
     {
         var x = document.getElementById(a);
@@ -17,4 +16,3 @@ import("account.html")
         x.style.display = "none";
         }
     }
-
