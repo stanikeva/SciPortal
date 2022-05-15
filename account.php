@@ -19,36 +19,39 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="css/styles.css" rel="stylesheet" />
+      <?php include('modals.php') ?>
+
   </head>
 
   <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-light navbar-custom sticky-top">
-    <div class="container px-0 pt-0 pb-0">
+    <div class="container px-0 pt-0 pb-0" >
       <a class="navbar-brand" href="#">
         <img class="img-fluid" src="images/logo2.png" alt="..." width="120" height="50" />
       </a>
-      <div class="collapse navbar-collapse" id="navbarPrimary">
+      <div class="collapse navbar-collapse" id="logInCreds">
         <ul class="navbar-nav ms-auto">
           <a href="website link here!!"><img src="images/img_avatar.png" alt="pfp" style="width:42px;height:42px;border-radius: 24px"></a>
         </ul>
+          <div class="dropdown">
+              <button class="dropbtn">...</button>
+              <div class="dropdown-content">
+                  <a href="index.php">Home</a>
+                  <a href="#">My account</a>
+                  <a href="#">Log out</a>
+              </div>
+          </div>
       </div>
 
-      <div class="dropdown">
-        <button class="dropbtn">...</button>
-        <div class="dropdown-content">
-          <a href="index.html">Home</a>
-          <a href="#">My account</a>
-          <a href="#">Log out</a>
-        </div>
-      </div>
+
     </div>
   </nav>
 
 
   <nav class="navbar navbar-expand-lg navbar-dark  bg-dark ">
     <div class="container pt-0 pb-0">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <img class="img-fluid" src="images/home.ico" alt="..." width="25" height="25" />
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSecondary" aria-controls="navbarResponsive"
@@ -97,7 +100,7 @@
       </div>
 
       <div class="search">
-        <form action="articles.html">
+        <form action="articles.php">
           <input type="text"
                  placeholder=" Search "
                  name="search">
@@ -171,7 +174,7 @@
                   <p>I am a very simple card. I am good at containing small bits of information. </p>
                 </div>
                 <div class="card-action">
-                  <a href="article.html">This is a link</a>
+                  <a href="article.php">This is a link</a>
                 </div>
               </div>
             </center>
@@ -186,7 +189,7 @@
                   <p>I am a very simple card. I am good at containing small bits of information.</p>
                 </div>
                 <div class="card-action">
-                  <a href="article.html">This is a link</a>
+                  <a href="article.php">This is a link</a>
                 </div>
               </div>
             </center>
@@ -201,7 +204,7 @@
                   <p>I am a very simple card. I am good at containing small bits of information. </p>
                 </div>
                 <div class="card-action">
-                  <a href="article.html">This is a link</a>
+                  <a href="article.php">This is a link</a>
                 </div>
               </div>
             </center>
@@ -271,15 +274,7 @@
 
   <div class="space100"></div>
 
-  <div class="d-flex flex-column align-items-center" id="contact">
-    <h4 class="mb-4">Follow us</h4>
-
-    <ul>
-      <li><a class="social-icon social-facebook" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-      <li><a class="social-icon social-instagram" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
-      <li><a class="social-icon social-twitter" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-    </ul>
-  </div>
+  <?php include('footer.php') ?>
 
   </body>
 </html>

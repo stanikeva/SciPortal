@@ -1,4 +1,5 @@
-import("account.html")
+import("account.php")
+
 
     function showContent(a,b,c)
     {
@@ -14,5 +15,24 @@ import("account.html")
         else
         {
             x.style.display = "none";
+        }
+    }
+
+    function navbarContent(p,x)
+    {
+            var pavlos = document.getElementById(p);
+            var xaikalhs = document.getElementById(x);
+
+            pavlos.style.display = "none";
+            xaikalhs.style.display = "block";
+    }
+
+    function hideSearchBar()
+    {
+        var charts = document.getElementsByClassName('search');
+        if(charts.length) {
+            for(var i=0; i<charts.length; i++) {
+                    charts[i].style.display = 'none';
+            }
         }
     }

@@ -18,158 +18,13 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="css/styles.css" rel="stylesheet" />
+    <?php include('modals.php') ?>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-light navbar-custom sticky-top">
-    <div class="container px-0 pt-0 pb-0">
-        <a class="navbar-brand" href="#">
-            <img class="img-fluid" src="images/logo2.png" alt="..." width="120" height="50" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrimary" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarPrimary">
-            <ul class="navbar-nav ms-auto">
-                <li><button type="button"  class="btn btn-light" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</button></li>
-                <li><button type="button"  class="btn btn-light" data-bs-toggle="modal" data-bs-target="#login">Log In</button></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<?php include('navbarsimple.php') ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark  bg-dark ">
-    <div class="container pt-0 pb-0">
-        <a class="navbar-brand" href="index.html">
-            <img class="img-fluid" src="images/home.ico" alt="..." width="25" height="25" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSecondary" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon2"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSecondary">
-            <div class="dropdown">
-                <button class="btn btn-clr  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Humanities
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Economics</a></li>
-                    <li><a class="dropdown-item" href="#">Cognitive Science</a></li>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-clr  dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                    Natural Sciences
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                    <li><a class="dropdown-item" href="#">Biology</a></li>
-                    <li><a class="dropdown-item" href="#">Chemistry</a></li>
-                    <li><a class="dropdown-item" href="#">Physics</a></li>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-clr dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
-                    Formal Sciences
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                    <li><a class="dropdown-item" href="#">Computer Science</a></li>
-                    <li><a class="dropdown-item" href="#">Mathematics</a></li>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-clr dropdown-toggle" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
-                    Applied Sciences
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-                    <li><a class="dropdown-item" href="#">Engineering</a></li>
-                    <li><a class="dropdown-item" href="#">Architecture</a></li>
-                    <li><a class="dropdown-item" href="#">Law</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="search">
-            <form action="articles.html">
-                <input type="text"
-                       placeholder=" Search "
-                       name="search">
-                <button>
-                    <i class="fa fa-search"
-                       style="font-size: 18px;">
-                    </i>
-                </button>
-            </form>
-        </div>
-    </div>
-</nav>
-
-<div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ModalLabel">Log In</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label">Email Address</label>
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
-                    </div>
-                    <div class="modal-footer d-block">
-                        <a href="account.html" class="btn btn-dark float-end">Log in</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- signup -->
-<div class="modal fade" id="signup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ModalLabel2">Sign Up</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label">Email Address</label>
-                        <input type="text" class="form-control" id="email" name="username" placeholder="Email" />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password1" name="password" placeholder="Password" />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Confirm Password</label>
-                        <input type="text" class="form-control" id="password2" name="username" placeholder="Confirm Password" />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstname" name="username" placeholder="First Name" />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastname" name="username" placeholder="Last Name" />
-                    </div>
-                    <form action="/action_page.php">
-                        <label for="birthday">Date of Birth:</label>
-                        <input type="date" id="birthday" name="birthday">
-                    </form>
-                    <div class="modal-footer d-block">
-                        <button type="submit" class="btn btn-dark float-end">Sign Up</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="space50"></div>
     <center>
@@ -191,7 +46,7 @@
                                 require little markup to use effectively.</p>
                         </div>
                         <div class="card-action">
-                            <a href="article.html">This is a link</a>
+                            <a href="article.php">This is a link</a>
                         </div>
                     </div>
                 </center>
@@ -207,24 +62,7 @@
                                 require little markup to use effectively.</p>
                         </div>
                         <div class="card-action">
-                            <a href="article.html">This is a link</a>
-                        </div>
-                    </div>
-                </center>
-            </div>
-            <div class="col s12 m3">
-                <center>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-
-                            <a href="article.html">This is a link</a>
+                            <a href="article.php">This is a link</a>
                         </div>
                     </div>
                 </center>
@@ -241,7 +79,24 @@
                         </div>
                         <div class="card-action">
 
-                            <a href="article.html">This is a link</a>
+                            <a href="article.php">This is a link</a>
+                        </div>
+                    </div>
+                </center>
+            </div>
+            <div class="col s12 m3">
+                <center>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/card2.png" width="100" height="100" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                                require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+
+                            <a href="article.php">This is a link</a>
                         </div>
                     </div>
                 </center>
@@ -267,7 +122,7 @@
                         </div>
                         <div class="card-action">
 
-                            <a href="article.html">This is a link</a>
+                            <a href="article.php">This is a link</a>
                         </div>
                     </div>
                 </center>
@@ -283,7 +138,7 @@
                                 require little markup to use effectively.</p>
                         </div>
                         <div class="card-action">
-                            <a href="article.html">This is a link</a>
+                            <a href="article.php">This is a link</a>
                         </div>
                     </div>
                 </center>
@@ -299,7 +154,7 @@
                                 require little markup to use effectively.</p>
                         </div>
                         <div class="card-action">
-                            <a href="article.html">This is a link</a>
+                            <a href="article.php">This is a link</a>
                         </div>
                     </div>
                 </center>
@@ -316,7 +171,7 @@
                         </div>
                         <div class="card-action">
 
-                            <a href="article.html">This is a link</a>
+                            <a href="article.php">This is a link</a>
                         </div>
                     </div>
                 </center>
@@ -341,7 +196,7 @@
                             require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="article.html">This is a link</a>
+                        <a href="article.php">This is a link</a>
                     </div>
                 </div>
                 </center>
@@ -374,7 +229,7 @@
                                 require little markup to use effectively.</p>
                         </div>
                         <div class="card-action">
-                            <a href="article.html">This is a link</a>
+                            <a href="article.php">This is a link</a>
                         </div>
                     </div>
                 </center>
@@ -390,7 +245,7 @@
                                 require little markup to use effectively.</p>
                         </div>
                         <div class="card-action">
-                            <a href="article.html">This is a link</a>
+                            <a href="article.php">This is a link</a>
                         </div>
                     </div>
                 </center>
@@ -417,16 +272,7 @@
 
 <br><br><br>
 
-<div class="d-flex flex-column align-items-center" id="contact">
-    <h4 class="mb-4">Follow us</h4>
-
-    <ul>
-        <br><br><br>
-        <li><a class="social-icon social-facebook" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-        <li><a class="social-icon social-instagram" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
-        <li><a class="social-icon social-twitter" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-    </ul>
-</div>
+<?php include('footer.php') ?>
 
 </body>
 </html>
