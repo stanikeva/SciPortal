@@ -33,7 +33,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark  bg-dark ">
     <div class="container pt-0 pb-0">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
             <img class="img-fluid" src="images/home.ico" alt="..." width="25" height="25" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSecondary" aria-controls="navbarResponsive"

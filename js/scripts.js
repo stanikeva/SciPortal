@@ -18,6 +18,12 @@ import("account.php")
         }
     }
 
+    function hideModal(a)
+    {
+        var giannisatetokoubo = document.getElementById(a);
+        giannisatetokoubo.style.display = "none";
+    }
+
     function navbarContent(p,x)
     {
             var pavlos = document.getElementById(p);
