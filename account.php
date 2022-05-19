@@ -21,6 +21,7 @@
     <link href="css/styles.css" rel="stylesheet" />
       <?php include('modals.php') ?>
 
+
   </head>
 
   <body>

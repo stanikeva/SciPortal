@@ -21,6 +21,7 @@ function showContent(a,b,c)
 
 
 
+
 function navbarSwitcher(p,x,c)
 {
     var pavlos;

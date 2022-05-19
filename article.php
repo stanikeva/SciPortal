@@ -23,6 +23,7 @@
     <?php include('modals.php') ?>
 </head>
 
+
 <body>
 
 <?php include('navbarsimple.php') ?>
