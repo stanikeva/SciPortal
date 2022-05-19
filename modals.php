@@ -1,7 +1,12 @@
-<?php
-    include_once 'test.php'
-?>
-<script type="text/javascript" src="js/scripts.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="js/scripts.js"></script>
+
+
+</head>
+
+<body>
 <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -10,17 +15,18 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
-                    <div class="mb-3">
+                <form action="loginsql.php" method="post">
+                <div class="mb-3">
+                        <p class="text-danger" style="display: none" id="combWrong">Email or password is incorrect.</p>
                         <label class="form-label">Email Address</label>
                         <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password"/>
                     </div>
                     <div class="modal-footer d-block">
-                        <a href="account.php" onclick="navbarContent('accountVuittons','logInCreds')" class="btn btn-dark float-end" data-bs-dismiss="modal">Log in</a>
+                        <button type="submit" class="btn btn-dark float-end" data-bs-dismiss="modal">Log In</button>
                     </div>
                 </form>
             </div>
@@ -36,10 +42,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="signupsql.php" METHOD="post">
+                <form action="signupsql.php" method="post">
                     <div class="mb-3">
                         <label class="form-label">Email Address</label>
                         <input type="text" class="form-control" id="email" name="email" placeholder="Email" />
+                        <p class="text-danger" style="display: none" id="emailUsed">Email is already in use.</p>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
@@ -57,15 +64,18 @@
                         <label class="form-label">Last Name</label>
                         <input type="text" class="form-control" id="lastname" name="last_name" placeholder="Last Name" />
                     </div>
-                    <form action="/action_page.php">
+                    <div>
                         <label for="birthday">Date of Birth:</label>
                         <input type="date" id="birthday" name="date">
-                    </form>
+                    </div>
                     <div class="modal-footer d-block">
-                        <button type="submit" onclick="navbarContent('accountVuittons','logInCreds')" class="btn btn-dark float-end" data-bs-dismiss="modal">Sign Up</button>
+                        <button type="submit" class="btn btn-dark float-end" data-bs-dismiss="modal">Sign Up</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+</body>
+</html>
+

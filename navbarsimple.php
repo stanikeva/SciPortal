@@ -15,17 +15,17 @@
                 <li><button type="button"  class="btn btn-light" data-bs-toggle="modal" data-bs-target="#login">Log In</button></li>
             </ul>
 
-                <ul class="navbar-nav ms-auto" id="logInCreds" style="display: none">
-                    <a href="website link here!!"><img src="images/img_avatar.png" alt="pfp" style="width:42px;height:42px;border-radius: 24px"></a>
-                    <div class="dropdown">
-                        <button class="dropbtn">...</button>
-                        <div class="dropdown-content">
-                            <a href="index.php">Home</a>
-                            <a href="#">My account</a>
-                            <a href="index.php" onclick="navbarContent('logInCreds','accountVuittons')">Log out</a>
-                        </div>
+            <ul class="navbar-nav ms-auto" id="logInCreds" style="display: none">
+                <a href="account.php"><img src="images/img_avatar.png" alt="pfp" style="width:42px;height:42px;border-radius: 24px"></a>
+                <div class="dropdown">
+                    <button class="dropbtn">...</button>
+                    <div class="dropdown-content">
+                        <a href="index.php">Home</a>
+                        <a href="account.php">My account</a>
+                        <a href="index.php" onclick="logout()">Log out</a>
                     </div>
-                </ul>
+                </div>
+            </ul>
         </div>
     </div>
     </div>
