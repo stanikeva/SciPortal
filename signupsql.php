@@ -11,6 +11,7 @@
         $date = $_POST['date'];
 
 
+
         $sql = "INSERT INTO bruh(email, passcode, first_name, last_name, birth_date) VALUES ('$email', '$password','$first_name','$last_name','$date');";
 
         $checkemail= mysqli_query($conn,"SELECT * FROM bruh WHERE email ='$email'");

@@ -4,7 +4,6 @@
     <div class="d-flex flex-column align-items-center" id="contact">
         <h4 class="mb-4">Follow us</h4>
 
-
         <ul>
             <br><br><br>
             <li><a class="social-icon social-facebook" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>

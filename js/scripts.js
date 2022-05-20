@@ -34,7 +34,7 @@ function navbarSwitcher(p,x,c)
         pavlos.style.display = "none";
         xaikalhs.style.display = "block";
     }
-    else if (!c.localeCompare("false"))
+    else //if (!c.localeCompare("false"))
     {
         pavlos = document.getElementById(p);
         xaikalhs = document.getElementById(x);
