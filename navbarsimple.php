@@ -24,7 +24,7 @@
                     <div class="dropdown-content">
                         <a href="index.php">Home</a>
                         <a href="account.php">My account</a>
-                        <a href="index.php" >Log out</a>
+                        <a href="logout.php" >Log out</a>
                     </div>
                 </div>
             </ul>
