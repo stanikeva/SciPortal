@@ -1,7 +1,5 @@
 import("account.php")
 
-
-
 function showContent(a,b,c)
 {
     var x = document.getElementById(a);
@@ -19,33 +17,19 @@ function showContent(a,b,c)
     }
 }
 
-
-
-
-function navbarSwitcher(p,x,c)
+function hideModal(a)
 {
-    var pavlos;
-    var xaikalhs;
-    if (!c.localeCompare("true"))
-    {
-        pavlos = document.getElementById(p);
-        xaikalhs = document.getElementById(x);
-
-        pavlos.style.display = "none";
-        xaikalhs.style.display = "block";
-    }
-    else //if (!c.localeCompare("false"))
-    {
-        pavlos = document.getElementById(p);
-        xaikalhs = document.getElementById(x);
-
-        pavlos.style.display = "";
-        xaikalhs.style.display = "none";
-    }
+    var giannisatetokoubo = document.getElementById(a);
+    giannisatetokoubo.style.display = "none";
 }
 
-
-
+function navbarContentSwitcher(p,x)
+{
+    var pavlos = document.getElementById(p);
+    var xaikalhs = document.getElementById(x);
+    pavlos.style.display = "none";
+    xaikalhs.style.display = "block";
+}
 function hideSearchBar()
 {
     var charts = document.getElementsByClassName('search');
@@ -58,12 +42,25 @@ function hideSearchBar()
 
 
 
-function logout()
-{
-    localStorage.setItem("navbarHidden", "false");
-}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 function emailShowWarning(a,b)
 {
@@ -75,16 +72,7 @@ function emailShowWarning(a,b)
 
 }
 
-
-
-
-
-
-
-
-
-
-/*function hideModal(a)
+function hideModal(a)
 {
     var giannisatetokoubo = document.getElementById(a);
     giannisatetokoubo.style.display = "none";

@@ -1,9 +1,9 @@
-<html>
+<html lang="en">
 <script type="text/javascript" src="js/scripts.js"></script>
+<body >
 
 
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-light navbar-custom sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-light navbar-custom sticky-top" >
     <div class="container px-0 pt-0 pb-0">
         <a class="navbar-brand" href="#">
             <img class="img-fluid" src="images/logo2.png" alt="..." width="120" height="50" />
@@ -11,22 +11,22 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrimary" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarPrimary">
-            <ul class="navbar-nav ms-auto" id="accountVuittons">
-                <li><button type="button"  class="btn btn-light" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</button></li>
-                <li><button type="button"  class="btn btn-light" data-bs-toggle="modal" data-bs-target="#login">Log In</button></li>
-            </ul>
 
-            <ul class="navbar-nav ms-auto" id="logInCreds" style="display: none">
-                <a href="account.php"><img src="images/img_avatar.png" alt="pfp" style="width:42px;height:42px;border-radius: 24px"></a>
-                <div class="dropdown">
-                    <button class="dropbtn">...</button>
-                    <div class="dropdown-content">
-                        <a href="index.php">Home</a>
-                        <a href="account.php">My account</a>
-                        <a href="index.php" onclick="logout()">Log out</a>
+                <ul class="navbar-nav ms-auto" id="logInCreds" style="display: none">
+                    <a href="account.php"><img src="images/img_avatar.png" alt="pfp" style="width:42px;height:42px;border-radius: 24px"></a>
+                    <div class="dropdown">
+                        <button class="dropbtn">...</button>
+                        <div class="dropdown-content">
+                            <a href="index.php">Home</a>
+                            <a href="account.php">My account</a>
+                            <a href="index.php" onclick="logout()">Log out</a>
+                        </div>
                     </div>
-                </div>
-            </ul>
+                </ul>
+                <ul class="navbar-nav ms-auto" id="accountVuittons" >
+                    <li><button type="button"  class="btn btn-light" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</button></li>
+                    <li><button type="button"  class="btn btn-light" data-bs-toggle="modal" data-bs-target="#login">Log In</button></li>
+                </ul>
         </div>
     </div>
     </div>
@@ -85,11 +85,12 @@
             <input type="text"
                    placeholder=" Search "
                    name="search">
-            <button>
+            <a id="search" type="button" class="btn-light" href="articles.php">
                 <i class="fa fa-search"
-                   style="font-size: 18px;">
+                   style="font-size:18px;">
                 </i>
-            </button>
+
+            </a>
             </form>
         </div>
     </div>

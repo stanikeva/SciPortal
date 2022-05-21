@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php session_start();
+
+ ?>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -26,19 +29,13 @@
   <body>
      <?php include('navbarsimple.php') ?>
 
-     <script>
-         var result;
-         result = localStorage.getItem("navbarHidden");
-         navbarSwitcher('accountVuittons','logInCreds',result);
-     </script>
-
 
   <div class="px-5 pt-0 pb-4 bg-image"  style="background: url('images/account_bg.jpg'); background-size: 100%">
     <div class="media align-items-end profile-header">
       <center>
       <div class="profile position-relative mr-3"><img src="images/img_avatar.png" alt="..." width="130" height="130" class="rounded mb-2 img-thumbnail">
         <div class="media-body mb-5 text-white">
-          <h4 class="mt-0 mb-0">Username</h4>
+          <h4 class="mt-0 mb-0"><?php echo $_SESSION['name']?></h4>
           <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i>Location</p>
         </div>
       </div>
@@ -197,3 +194,12 @@
 
   </body>
 </html>
+
+<!--if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) }else{
+
+header("Location: index.php");
+
+exit();
+
+}{-->
+
