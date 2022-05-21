@@ -5,25 +5,12 @@ session_start();
 include "test.php";
 
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
-
-    function validate($data)
-    {
-
-        $data = trim($data);
-
-        $data = stripslashes($data);
-
-        return htmlspecialchars($data);
-
-    }
-
     $email = validate($_POST['email']);
     $pass = validate($_POST['password']);
 
     if (empty($email)) {
 
-        header("Location: index.php?error=User Name is required");
+        header("Location: index.php?error=Email is required");
         exit();
 
     } else if (empty($pass)) {
@@ -36,7 +23,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $sql = "SELECT * FROM Users WHERE email='$email' AND passcode='$pass'";
     $result = mysqli_query($conn, $sql);
 
-        if (mysqli_num_rows($result) === 1) {
+        if (mysqli_num_rows($result) >= 1) {
 
             $row = mysqli_fetch_assoc($result);
 
@@ -71,7 +58,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
             exit();
         }
-}
+
 
 
 //include_once 'test.php';

@@ -13,4 +13,15 @@ if (!$conn) {
 
 }
 
+function validate($data)
+{
+
+    $data = trim($data);
+
+    $data = stripslashes($data);
+
+    return htmlspecialchars($data);
+
+}
+
 

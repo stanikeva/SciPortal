@@ -46,7 +46,7 @@ include "test.php";
     </div>
 </div>
 
-<div class="modal fade" id="signup" name="signup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="signup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -55,30 +55,35 @@ include "test.php";
             </div>
             <div class="modal-body">
                 <form action="signupsql.php" METHOD="post">
+                    <?php if (isset($_GET['error2'])) { ?>
+
+                        <p class="error alert-danger"><?php echo $_GET['error2']; ?></p>
+                        <script>
+                            $("#signup").modal()
+                        </script>
+                    <?php } ?>
                     <div class="mb-3">
                         <label class="form-label">Email Address</label>
                         <input type="text" class="form-control" id="email" name="email" placeholder="Email" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password1" name="password" placeholder="Password" />
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="password2" name="cpassword" placeholder="Confirm Password" />
+                        <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstname" name="first_name" placeholder="First Name" />
+                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastname" name="last_name" placeholder="Last Name" />
+                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" />
                     </div>
-                    <form action="/action_page.php">
                         <label for="birthday">Date of Birth:</label>
-                        <input type="date" id="birthday" name="date">
-                    </form>
+                        <input type="date" id="date" name="date">
                     <div class="modal-footer d-block">
                         <button type="submit"  class="btn btn-dark float-end" data-bs-dismiss="modal">Sign Up</button>
                         <!--onclick="navbarContent('accountVuittons','logInCreds')"-->
