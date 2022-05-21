@@ -14,35 +14,36 @@ $cpassword = validate($_POST['cpassword']);
 $first_name = validate($_POST['first_name']);
 $last_name = validate($_POST['last_name']);
 $date = validate($_POST['date']);
+$url = $_SESSION['url'];
 
 
 
 if (empty($email)) {
 
-    header("Location: index.php?error2=Email is required");
+    header("Location: $url?error2=Email is required");
     exit();
 }
 else if (empty($password)) {
 
-    header("Location: index.php?error2=Password is required");
+    header("Location: $url?error2=Password is required");
     exit();
 }
 
 else if ($password!=$cpassword) {
 
-    header("Location: index.php?error2=Passwords do not match");
+    header("Location: $url?error2=Passwords do not match");
     exit();
 }
 
 else if (empty($first_name) || empty($last_name))
 {
-    header("Location: index.php?error2=Name cannot be empty");
+    header("Location: $url?error2=Name cannot be empty");
     exit();
 }
 
 else if (empty($date))
 {
-    header("Location: index.php?error2=Please specify a date");
+    header("Location: $url?error2=Please specify a date");
     exit();
 }
 
@@ -54,7 +55,7 @@ $checkemail= mysqli_query($conn,"SELECT * FROM Users WHERE email ='$email'");
 
 if (mysqli_num_rows($checkemail)>0)
 {
-    header("Location: index.php#signup");
+    header("Location: $url?error2=Email is already in use");
 }
 else
 {

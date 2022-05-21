@@ -7,15 +7,16 @@ include "test.php";
 
     $email = validate($_POST['email']);
     $pass = validate($_POST['password']);
+    $url = $_SESSION['url'];
 
     if (empty($email)) {
 
-        header("Location: index.php?error=Email is required");
+        header("Location: $url?error=Email is required");
         exit();
 
     } else if (empty($pass)) {
 
-        header("Location: index.php?error=Password is required");
+        header("Location: $url?error=Password is required");
         exit();
 
     }
@@ -46,7 +47,7 @@ include "test.php";
 
             } else {
 
-                header("Location: index.php?error=Incorrect User name or password");
+                header("Location: $url?error=Incorrect User name or password");
 
                 exit();
 
@@ -54,7 +55,7 @@ include "test.php";
 
         }else{
 
-            header("Location: index.php?error=Incorrect User name or password");
+            header("Location: $url?error=Incorrect User name or password");
 
             exit();
         }

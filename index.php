@@ -21,7 +21,12 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="css/styles.css" rel="stylesheet" />
-    <?php include('modals.php') ?>
+    <?php
+        include('modals.php');
+        $url = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+        $_SESSION['url']=$url;
+
+    ?>
 
 
 </head>

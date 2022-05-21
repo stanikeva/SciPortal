@@ -28,7 +28,11 @@
 
 <body>
 
-<?php include('navbarsimple.php') ?>
+<?php
+    include('navbarsimple.php');
+    $url = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+    $_SESSION['url']=$url;
+?>
 
 
 

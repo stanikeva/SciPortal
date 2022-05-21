@@ -25,7 +25,11 @@
   </head>
 
   <body>
-     <?php include('navbarsimple.php') ?>
+     <?php
+         include('navbarsimple.php');
+         $url = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+         $_SESSION['url']=$url;
+     ?>
 
 
   <div class="px-5 pt-0 pb-4 bg-image"  style="background: url('images/account_bg.jpg'); background-size: 100%">
