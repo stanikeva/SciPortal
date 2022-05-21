@@ -25,10 +25,10 @@ function hideModal(a)
 
 function navbarContentSwitcher(p,x)
 {
-    var pavlos = document.getElementById(p);
-    var xaikalhs = document.getElementById(x);
-    pavlos.style.display = "none";
-    xaikalhs.style.display = "block";
+    var z = document.getElementById(p);
+    var y = document.getElementById(x);
+    z.style.display = "none";
+    y.style.display = "block";
 }
 function hideSearchBar()
 {

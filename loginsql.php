@@ -36,9 +36,9 @@ include "test.php";
 
                 $_SESSION['name'] = $row['first_name'].' '.$row['last_name'];
 
-                $_SESSION['id'] = $row['idAccounts'];
 
-
+                $_SESSION['show']="inherit";
+                $_SESSION['hide']="none";
 
 
                 header("Location: account.php");

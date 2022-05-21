@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<?php session_start(); ?>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -24,12 +25,6 @@
 
 <body>
 <?php include('navbarsimple.php') ?>
-
-<script>
-    var result;
-    result = localStorage.getItem("navbarHidden");
-    navbarSwitcher('accountVuittons','logInCreds',result);
-</script>
 
 
 

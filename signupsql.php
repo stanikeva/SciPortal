@@ -16,6 +16,7 @@ $last_name = validate($_POST['last_name']);
 $date = validate($_POST['date']);
 
 
+
 if (empty($email)) {
 
     header("Location: index.php?error2=Email is required");
@@ -64,7 +65,7 @@ else
 
     $_SESSION['name'] = $first_name.' '.$last_name;
 
-    $_SESSION['id'] = $row['idAccounts'];
+
 
     header("Location: account.php");
 }

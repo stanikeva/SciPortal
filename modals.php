@@ -1,7 +1,6 @@
 <?php
 include "test.php";
 ?>
-
 <script type="text/javascript" src="js/scripts.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -36,8 +35,8 @@ include "test.php";
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
                     </div>
                     <div class="modal-footer d-block">
-                       <!--href="account.php" onclick="navbarContent('accountVuittons','logInCreds')"
-                        -->
+                        <!--href="account.php" onclick="navbarContent('accountVuittons','logInCreds')"
+                         -->
                         <button type="submit"  class="btn btn-dark float-end" data-bs-dismiss="modal"> Log in</button>
                     </div>
                 </form>
@@ -82,8 +81,8 @@ include "test.php";
                         <label class="form-label">Last Name</label>
                         <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" />
                     </div>
-                        <label for="birthday">Date of Birth:</label>
-                        <input type="date" id="date" name="date">
+                    <label for="birthday">Date of Birth:</label>
+                    <input type="date" id="date" name="date">
                     <div class="modal-footer d-block">
                         <button type="submit"  class="btn btn-dark float-end" data-bs-dismiss="modal">Sign Up</button>
                         <!--onclick="navbarContent('accountVuittons','logInCreds')"-->
