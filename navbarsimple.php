@@ -82,7 +82,7 @@
                 </ul>
             </div>
         </div>
-        <div class="search">
+        <div class="search" <?php if (strpos($_SERVER["SCRIPT_NAME"],"index.php")): ?> style="display: none" <?php endif; ?> >
             <input type="text"
                    placeholder=" Search "
                    name="search">
