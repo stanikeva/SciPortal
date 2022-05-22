@@ -61,7 +61,7 @@ else
 {
     //$_SESSION['email'] = $email;
     mysqli_query($conn,$sql);
-    $getId = mysqli_query($conn,"SELECT id FROM Users WHERE email = $email ");
+    $getId = mysqli_query($conn,"SELECT id FROM Users WHERE email = '$email' ");
     $row = mysqli_fetch_assoc($getId);
 
     $_SESSION['id'] = $row['id'];
