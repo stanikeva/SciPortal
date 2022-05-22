@@ -18,7 +18,7 @@
             </ul>
 
             <ul class="navbar-nav ms-auto" id="logInCreds"  <?php if(isset($_SESSION['name'])):?> style="display: inherit" <?php  else : ?> style="display: none" <?php endif; ?>>
-                <a href="website link here!!"><img src="images/img_avatar.png" alt="pfp" style="width:42px;height:42px;border-radius: 24px"></a>
+                <a href="account.php"><img src="images/img_avatar.png" alt="pfp" style="width:42px;height:42px;border-radius: 24px"></a>
                 <div class="dropdown">
                     <button class="dropbtn">...</button>
                     <div class="dropdown-content">

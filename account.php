@@ -130,14 +130,18 @@
           </div>
         </div>
 
-        <form id="newArticle" style="display: none">
+        <form id="newArticle" style="display: none"  action="submitArticle.php" method="post">
+            <?php if (isset($_GET['error3'])) { ?>
+
+            <p class="error alert-danger"><?php echo $_GET['error3']; ?></p>
+            <?php }?>
           <div class="form-group">
             <label for="exampleFormControlInput1">Title</label>
-            <input class="form-control" id="exampleFormControlInput1" placeholder="Title goes here...">
+            <input class="form-control" id="title" name="title" required="required" placeholder="Title goes here...">
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Subject</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="subject" name="subject">
               <option>Economics</option>
               <option>Cognitive Science</option>
               <option>Biology</option>
@@ -153,8 +157,9 @@
 
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Article goes here</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            <div class="space50"></div>
+              <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+
+              <div class="space50"></div>
             <center>
               <button type="submit" class="btn btn-dark mb-2">Submit Article</button>
             </center>
