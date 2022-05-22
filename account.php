@@ -26,6 +26,8 @@
         $id = $_SESSION['id'];
         $sql = "SELECT title, uploadDate FROM Pending_articles WHERE Users_id='$id' ORDER BY uploadDate";
         $result = mysqli_query($conn, $sql);
+        $sql2 = "SELECT * FROM Articles WHERE Users_id='$id' ";
+        $result2 = mysqli_query($conn, $sql2);
       ?>
 
   </head>
@@ -60,7 +62,7 @@
           <div class="space50"></div>
 
           <h4 class="text-break">Posted:</h4>
-          <p class="text-break">3</p>
+          <p class="text-break"><?php $posted= mysqli_num_rows($result2); echo $posted?></p>
 
           <h4 class="text-break">Pending:</h4>
           <p class="text-break"><?php $pending = mysqli_num_rows($result); echo $pending?></p>
