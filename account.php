@@ -21,7 +21,12 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="css/styles.css" rel="stylesheet" />
-      <?php include('modals.php') ?>
+      <?php
+        include('modals.php');
+        $id = $_SESSION['id'];
+        $sql = "SELECT title, uploadDate FROM Pending_articles WHERE Users_id='$id' ORDER BY uploadDate";
+        $result = mysqli_query($conn, $sql);
+      ?>
 
   </head>
 
@@ -58,7 +63,7 @@
           <p class="text-break">3</p>
 
           <h4 class="text-break">Pending:</h4>
-          <p class="text-break">3</p>
+          <p class="text-break"><?php $pending = mysqli_num_rows($result); echo $pending?></p>
         </main>
       </div>
       <div class="col-10">
@@ -73,8 +78,8 @@
             <div class="collapse navbar-collapse" id="btnacc">
               <ul>
                 <li class="nav-item"><button type="button" onclick="showContent('MyArticles','newArticle','pendingArticles')" class="btn btn-light2 btn-acc" data-bs-toggle="modal" >My articles</button></li>
-                <li class="nav-item"><button type="button" onclick="showContent('newArticle','MyArticles','pendingArticles')" class="btn btn-light2 btn-acc" data-bs-toggle="modal" >New article</button></li>
-                <li class="nav-item"><button type="button" onclick="showContent('pendingArticles','newArticle','myArticles')" class="btn btn-light2 btn-acc" data-bs-toggle="modal" >Pending approval</button></li>
+                <li class="nav-item"><button type="button" onclick="showContent('newArticle','pendingArticles','MyArticles')" class="btn btn-light2 btn-acc" data-bs-toggle="modal" >New article</button></li>
+                <li class="nav-item"><button type="button" onclick="showContent('pendingArticles','newArticle','MyArticles')" class="btn btn-light2 btn-acc" data-bs-toggle="modal" >Pending approval</button></li>
               </ul>
             </div>
           </div>
@@ -131,13 +136,9 @@
         </div>
 
         <form id="newArticle" style="display: none"  action="submitArticle.php" method="post">
-            <?php if (isset($_GET['error3'])) { ?>
-
-            <p class="error alert-danger"><?php echo $_GET['error3']; ?></p>
-            <?php }?>
           <div class="form-group">
             <label for="exampleFormControlInput1">Title</label>
-            <input class="form-control" id="title" name="title" required="required" placeholder="Title goes here...">
+            <input class="form-control" id="title" name="title" required=""  placeholder="Title goes here..." >
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Subject</label>
@@ -157,7 +158,7 @@
 
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Article goes here</label>
-              <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+              <textarea class="form-control" name="content" required=""  rows="3"></textarea>
 
               <div class="space50"></div>
             <center>
@@ -175,21 +176,20 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Title1</td>
-            <td>DD/MM/YYYY</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Title2</td>
-            <td>DD/MM/YYYY</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Title3</td>
-            <td>DD/MM/YYYY</td>
-          </tr>
+          <?php   // LOOP TILL END OF DATA
+          $counter = 1;
+          while($row = mysqli_fetch_assoc($result))
+          {?>
+            <tr>
+                <td><?php echo $counter?></td>
+                <td><?php echo $row['title'];?></td>
+                <td><?php echo $row['uploadDate'];?></td>
+            </tr>
+
+          <?php
+              $counter++;
+             }
+          ?>
           </tbody>
         </table>
       </div>

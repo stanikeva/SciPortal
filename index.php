@@ -26,6 +26,12 @@
         include('modals.php');
         $url = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
         $_SESSION['url']=$url;
+
+        $sql = "SELECT * FROM Users";
+        $result = mysqli_query($conn, $sql);
+
+        $sql2 = "SELECT * FROM Articles";
+        $result2 = mysqli_query($conn, $sql2);
     ?>
 </head>
 <body >
@@ -356,17 +362,17 @@
             <div class="col-md-4">
                 <p class="fa fa-user fa-4x"></p>
                 <h4 class="my-3">Users</h4>
-                <h1 class="my-0">123</h1>
+                <h1 class="my-0"><?php echo mysqli_num_rows($result) ?></h1>
             </div>
             <div class="col-md-4">
                 <p class="fa fa-book fa-4x"></p>
                 <h4 class="my-3">Fields</h4>
-                <h1>5</h1>
+                <h1>10</h1>
             </div>
             <div class="col-md-4">
                 <p class="fa fa-laptop fa-4x"></p>
                 <h4 class="my-3">Articles</h4>
-                <h1>12</h1>
+                <h1><?php echo mysqli_num_rows($result2) ?></h1>
             </div>
         </div>
     </div>
