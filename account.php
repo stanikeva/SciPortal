@@ -94,11 +94,12 @@
 
         <div class="space50"></div>
 
+          <div class="valign-wrapper" id="MyArticles" style="display: none">
           <?php
-          while($rows = mysqli_fetch_assoc($result))
+          while($rows = mysqli_fetch_assoc($result2))
           {
               ?>
-              <div class="valign-wrapper" id="MyArticles" style="display: none">
+                  <a href="article.php" class="alert-secondary">
                   <div class="container">
                       <div class="row">
                           <div class="col s12 m3">
@@ -117,13 +118,14 @@
 
                       </div>
                   </div>
-              </div>
-              <br>
-
+              </a>
+              <div class="space50"> </div>
 
               <?php
           }
           ?>
+      </div>
+
 
         <form id="newArticle" style="display: none"  action="submitArticle.php" method="post">
           <div class="form-group">
