@@ -4532,7 +4532,7 @@ textarea.form-control-lg {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 0;
+  min-height: 17em;
   word-wrap: break-word;
   background-color: #FFFFFF;
   background-clip: border-box;

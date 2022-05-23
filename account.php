@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
+<?php
+    session_start();
+    if (!isset($_SESSION['id']))
+        header('Location: index.php');
+
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -89,53 +94,36 @@
 
         <div class="space50"></div>
 
-        <div id="MyArticles" style="display: none;">
-          <div class="col s12 m3">
-            <center>
-              <div class="card3">
-                <div class="card-image">
-                  <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                </div>
-                <div class="card-content">
-                  <p>I am a very simple card. I am good at containing small bits of information. </p>
-                </div>
-                <div class="card-action">
-                  <a href="article.php">This is a link</a>
-                </div>
+          <?php
+          while($rows = mysqli_fetch_assoc($result))
+          {
+              ?>
+              <div class="valign-wrapper" id="MyArticles" style="display: none">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col s12 m3">
+                              <center>
+                                  <div class="card3">
+                                      <div class="card-image ">
+                                          <img src="images/card2.png" width="100" height="100" class="responsive-img">
+                                      </div>
+                                      <br>
+                                      <div class="card-content">
+                                          <p><?php echo $rows['title']; ?></p>
+                                      </div>
+                                  </div>
+                              </center>
+                          </div>
+
+                      </div>
+                  </div>
               </div>
-            </center>
-          </div>
-          <div class="col s12 m3">
-            <center>
-              <div class="card3">
-                <div class="card-image">
-                  <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                </div>
-                <div class="card-content">
-                  <p>I am a very simple card. I am good at containing small bits of information.</p>
-                </div>
-                <div class="card-action">
-                  <a href="article.php">This is a link</a>
-                </div>
-              </div>
-            </center>
-          </div>
-          <div class="col s12 m3">
-            <center>
-              <div class="card3">
-                <div class="card-image">
-                  <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                </div>
-                <div class="card-content">
-                  <p>I am a very simple card. I am good at containing small bits of information. </p>
-                </div>
-                <div class="card-action">
-                  <a href="article.php">This is a link</a>
-                </div>
-              </div>
-            </center>
-          </div>
-        </div>
+              <br>
+
+
+              <?php
+          }
+          ?>
 
         <form id="newArticle" style="display: none"  action="submitArticle.php" method="post">
           <div class="form-group">

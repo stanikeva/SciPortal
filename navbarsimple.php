@@ -48,8 +48,8 @@
                     Humanities
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Economics</a></li>
-                    <li><a class="dropdown-item" href="#">Cognitive Science</a></li>
+                    <li><a class="dropdown-item" href="articles.php?subject=economics">Economics</a></li>
+                    <li><a class="dropdown-item" href="articles.php?subject=Cognitive Science">Cognitive Science</a></li>
                 </ul>
             </div>
             <div class="dropdown">
@@ -57,9 +57,9 @@
                     Natural Sciences
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                    <li><a class="dropdown-item" href="#">Biology</a></li>
-                    <li><a class="dropdown-item" href="#">Chemistry</a></li>
-                    <li><a class="dropdown-item" href="#">Physics</a></li>
+                    <li><a class="dropdown-item" href="articles.php?subject=biology">Biology</a></li>
+                    <li><a class="dropdown-item" href="articles.php?subject=chemistry">Chemistry</a></li>
+                    <li><a class="dropdown-item" href="articles.php?subject=physics">Physics</a></li>
                 </ul>
             </div>
             <div class="dropdown">
@@ -67,8 +67,8 @@
                     Formal Sciences
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                    <li><a class="dropdown-item" href="#">Computer Science</a></li>
-                    <li><a class="dropdown-item" href="#">Mathematics</a></li>
+                    <li><a class="dropdown-item" href="articles.php?subject=Computer Science">Computer Science</a></li>
+                    <li><a class="dropdown-item" href="articles.php?subject=Mathematics">Mathematics</a></li>
                 </ul>
             </div>
             <div class="dropdown">
@@ -76,9 +76,9 @@
                     Applied Sciences
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-                    <li><a class="dropdown-item" href="#">Engineering</a></li>
-                    <li><a class="dropdown-item" href="#">Architecture</a></li>
-                    <li><a class="dropdown-item" href="#">Law</a></li>
+                    <li><a class="dropdown-item" href="articles.php?subject=engineering">Engineering</a></li>
+                    <li><a class="dropdown-item" href="articles.php?subject=architecture">Architecture</a></li>
+                    <li><a class="dropdown-item" href="articles.php?subject=law">Law</a></li>
                 </ul>
             </div>
         </div>

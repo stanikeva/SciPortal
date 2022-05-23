@@ -29,6 +29,10 @@
     include('navbarsimple.php');
     $url = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
     $_SESSION['url']=$url;
+
+    $subject = $_GET['subject'];
+    $sql = "SELECT * FROM Articles WHERE subject='$subject'";
+    $result = mysqli_query($conn, $sql);
 ?>
 
 
@@ -39,229 +43,64 @@
     </center>
 <div class="space50"></div>
 
-<div class="valign-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m3">
-                <center>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="article.php">This is a link</a>
-                        </div>
-                    </div>
-                </center>
-            </div>
-            <div class="col s12 m3">
-                <center>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="article.php">This is a link</a>
-                        </div>
-                    </div>
-                </center>
-            </div>
-            <div class="col s12 m3">
-                <center>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
 
-                            <a href="article.php">This is a link</a>
-                        </div>
-                    </div>
-                </center>
-            </div>
-            <div class="col s12 m3">
-                <center>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
 
-                            <a href="article.php">This is a link</a>
-                        </div>
-                    </div>
-                </center>
-            </div>
-        </div>
-    </div>
-</div>
+<?php
+    $i=0;
+    while($rows = mysqli_fetch_assoc($result))
+    {
 
-<br><br><br>
+        if ($i%3==0)
+        {?>
+            <div class="valign-wrapper">
+                <div class="container">
+                    <div class="row">
 
-<div class="valign-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m3">
-                <center>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
+        <?php } ?>
 
-                            <a href="article.php">This is a link</a>
-                        </div>
-                    </div>
-                </center>
-            </div>
-            <div class="col s12 m3">
-                <center>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="article.php">This is a link</a>
-                        </div>
-                    </div>
-                </center>
-            </div>
-            <div class="col s12 m3">
-                <center>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="article.php">This is a link</a>
-                        </div>
-                    </div>
-                </center>
-            </div>
-            <div class="col s12 m3">
-                <center>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
 
-                            <a href="article.php">This is a link</a>
-                        </div>
-                    </div>
-                </center>
-            </div>
-        </div>
-    </div>
-</div>
+                    <div class="col-4 s12 m3">
+                        <center>
+                            <div class="card">
+                                <div class="card-image ">
+                                    <img src="images/card2.png" width="100" height="100" class="responsive-img">
+                                </div>
+                                <br>
+                                <div class="card-content">
+                                    <p><?php echo $rows['title']; ?></p>
+                                    <p>
+                                        <?php
+                                        $user_id=$rows['Users_id'];
+                                        $sql2 = " SELECT first_name, last_name FROM Users, Articles WHERE Users.id='$user_id'";
+                                        $result2 = mysqli_query($conn, $sql2);
+                                        $row = mysqli_fetch_assoc($result2);
+                                        echo "Author: ".$row['first_name']." ".$row['last_name'];
+                                        ?>
 
-<br><br><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                        <?php
 
-<div class="valign-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m3">
-                <center>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                            require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="article.php">This is a link</a>
-                    </div>
-                </div>
-                </center>
+                        if ($i%3==2)
+                        {?>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
 
-            </div>
-            <div class="col s12 m3">
-                <center>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
-                    </div>
-                </center>
-            </div>
-            <div class="col s12 m3">
-                <center>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="article.php">This is a link</a>
-                        </div>
-                    </div>
-                </center>
-            </div>
-            <div class="col s12 m3">
-                <center>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/card2.png" width="100" height="100" class="responsive-img">
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="article.php">This is a link</a>
-                        </div>
-                    </div>
-                </center>
-            </div>
-        </div>
-    </div>
-</div>
 
-<br><br><br><br>
+                        <?php
+                            }
+                            $i++;
+                        ?>
+<?php
+    }
+?>
+
+<div class="space"></div>
 
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
