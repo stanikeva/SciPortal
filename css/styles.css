@@ -11542,6 +11542,7 @@ p,h3{
   width: 70%;
   height: 50%;
   text-align: center;
+  min-height: 14em;
   background: rgb(0, 0, 0,0.94);
   border-radius: 10px;
   box-shadow: 0px 15px 100px #1b1c1b;
@@ -11626,4 +11627,9 @@ p,h3{
 .social-twitter:hover
 {
   color: #41aac5;
+}
+
+.a2{
+  text-decoration: none !important;
+  color: #f0f0f0 !important;
 }

@@ -39,7 +39,7 @@
 
 <div class="space50"></div>
     <center>
-        <h3>Search Results:</h3>
+        <h3>Results:</h3>
     </center>
 <div class="space50"></div>
 
@@ -60,6 +60,7 @@
 
 
                     <div class="col-4 s12 m3">
+                        <a href="article.php?art_id=<?php echo $rows['id']?>" class="alert-secondary">
                         <center>
                             <div class="card">
                                 <div class="card-image ">
@@ -81,7 +82,9 @@
                                 </div>
                             </div>
                         </center>
+                        </a>
                     </div>
+
                         <?php
 
                         if ($i%3==2)

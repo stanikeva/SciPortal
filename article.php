@@ -34,7 +34,30 @@
     include('navbarsimple.php');
     $url = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
     $_SESSION['url']=$url;
-?>
+    if (!isset($_GET['art_id']))
+    {?>
+            <div class="space100"></div>
+        <center><h1> 404 <br> Article is unavailable (sorry) ... :( </h1></center>
+
+    <?php }
+    else
+    {
+        $art_id=$_GET['art_id'];
+        $sql = "SELECT * FROM Articles WHERE id='$art_id'";
+        $result = mysqli_query($conn,$sql);
+        $row = mysqli_fetch_assoc($result);
+
+        $user_id=$row['Users_id'];
+        $sql2 = " SELECT first_name, last_name FROM Users, Articles WHERE Users.id='$user_id'";
+        $result2 = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_assoc($result2);
+
+        $subject = $row['subject'];
+        $sql3 = "SELECT * FROM Articles INNER JOIN Users ON Users_id=Users.id WHERE subject='$subject' AND Articles.id!='$art_id'";
+        $result3 = mysqli_query($conn,$sql3);
+
+    ?>
+
 
 
 
@@ -48,30 +71,21 @@
 
       <div class="row">
         <div class="col-md-8">
-          <h1>Lorem Ipsum </h1>
-          <h5>Lorem Ipsum's Author</h5>
+          <h1><?php echo $row['title']?> </h1>
+          <h5><?php echo $row2['last_name']." ".$row2['first_name']?></h5>
         </div>
         <div class="col-md-4">
-          <img    class="img-fluid float-right" src="images/cognitive.jpg"  width="300" height="100">
+          <img    class="img-fluid float-right" src="images/<?php echo $row['subject']?>.jpg"  width="300" height="100">
         </div>
       </div>
 
-      <button class="badge rounded-pill bg-dark" href="">Tag1</button>
-      <button class="badge rounded-pill bg-dark" href="">Tag2</button>
-      <button class="badge rounded-pill bg-dark" href="">Tag3</button>
+      <a class="badge rounded-pill bg-dark a2" href="articles.php?subject=<?php echo $subject ?>"><?php echo $subject ?></a>
+
 
       <br><br>
 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor imperdiet auctor. Etiam quis hendrerit lectus. Vestibulum sollicitudin ligula eu elit egestas blandit. Nulla enim est, fringilla et metus eu, rutrum porttitor velit. Sed rhoncus, nisl ut egestas tristique, dui neque rutrum enim, a efficitur turpis sapien vitae mi. Sed porta bibendum orci ut ultricies. Proin sollicitudin tortor in augue tempor, eget ornare ligula fringilla. Nulla rutrum vestibulum nibh vitae pulvinar. Donec pulvinar sem a mi cursus, id gravida felis placerat. Proin laoreet augue eleifend ligula iaculis, quis condimentum nunc rhoncus. Cras gravida ante eget tristique hendrerit. Suspendisse nec auctor odio. Proin blandit congue turpis, ultricies tincidunt urna ultricies eu.
-
-        Ut sagittis mauris ac euismod porta. Sed sodales est sit amet arcu eleifend, in venenatis libero volutpat. Quisque volutpat in arcu in finibus. Suspendisse porttitor lectus sit amet ultrices pretium. Pellentesque lacinia, nisi eu malesuada volutpat, massa nisi tempor ex, nec tincidunt sem felis quis dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean ut lorem fermentum, maximus nisi sit amet, rutrum leo. Morbi sed lectus sem. Aenean hendrerit est ut ornare lobortis. Phasellus dictum non lectus in congue. Sed facilisis turpis nec efficitur posuere. Nulla pellentesque blandit maximus. Quisque id mollis lorem, in vulputate quam. Cras lobortis est nec urna rutrum, at sodales diam vehicula. Nunc sem nunc, volutpat at tempus lacinia, ultrices non lorem. Etiam nec lobortis enim.
-
-        Nullam eget augue elementum, auctor lacus id, bibendum lacus. Nam at tellus non est accumsan placerat. Praesent pretium risus elementum quam mollis aliquet. Aliquam facilisis, mi sit amet egestas hendrerit, magna mauris porttitor massa, at eleifend orci dui id odio. Aliquam sodales accumsan metus. Pellentesque vel rutrum enim. Etiam sit amet turpis placerat, fermentum nibh vel, consectetur diam. Nunc at tempus sem, quis sagittis nisl. Duis non rhoncus odio. Donec auctor tincidunt nisl quis elementum. Aenean mattis elit massa, eu egestas arcu dapibus ac. Nunc consectetur, ex at ultrices interdum, orci sapien volutpat turpis, in egestas metus elit eu risus. Phasellus consectetur auctor ipsum vitae scelerisque. Ut orci mauris, congue non sagittis ut, feugiat at massa. Donec dignissim molestie feugiat.
-
-        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce cursus porttitor finibus. Maecenas dignissim augue quis erat porttitor venenatis. Donec mattis sollicitudin libero nec ullamcorper. Ut molestie interdum felis in pulvinar. Sed eros magna, malesuada vitae rhoncus vitae, mattis eget mi. Phasellus non congue neque. Morbi euismod dolor cursus, pulvinar metus sed, semper nisl. Maecenas luctus ante nec consectetur volutpat. Donec quis nisi eu massa scelerisque feugiat eget id ex. Sed sit amet facilisis enim. Aenean est justo, pulvinar sit amet aliquam quis, volutpat et lorem. Nunc lobortis leo nec justo venenatis scelerisque. Fusce ipsum lacus, sodales quis dolor quis, vestibulum posuere tortor. Nullam erat nunc, sagittis vel accumsan quis, sodales sed dolor.
-
-        Vestibulum ullamcorper aliquet quam, at vehicula risus luctus nec. Suspendisse placerat faucibus arcu non semper. Donec neque est, interdum auctor dolor non, eleifend eleifend dui. Quisque eu ipsum pellentesque, rutrum mi eu, tincidunt sapien. Nulla maximus in ligula vitae porta. Maecenas dui tellus, tincidunt et molestie vel, semper vel nunc. Ut ac lorem vitae nunc volutpat dictum nec quis turpis. Nulla facilisi. Sed ornare ut lacus ut volutpat. Phasellus ullamcorper accumsan lacus, eget condimentum urna ullamcorper eu. Integer ut tempor libero, in molestie ante. Phasellus libero tortor, pulvinar eget lacinia et, placerat in ipsum. Suspendisse potenti. Morbi auctor magna et diam congue dapibus. Aenean lobortis in dolor et semper. In dignissim feugiat mi quis efficitur.
+          <?php echo $row['context'] ?>
       </p>
     </div>
 
@@ -80,46 +94,42 @@
       <main>
         <h1><u>Read Next</u></h1>
       </main>
-      <div class="card">
-        <div class="card-image">
-          <img src="images/card2.png" width="100" height="100" class="responsive-img img-fluid">
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-            require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="images/card2.png" width="100" height="100" class="responsive-img img-fluid">
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-            require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="images/card2.png" width="100" height="100" class="responsive-img img-fluid">
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-            require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
+    <?php
+        $noOfRows = mysqli_num_rows($result3);
+
+        if ($noOfRows<3)
+            $i=$noOfRows;
+        else
+            $i=3;
+        for ($x = 0; $x < $i; $x++)
+        {
+            $row3 = mysqli_fetch_assoc($result3) ?>
+          <a  href="article.php?art_id=<?php echo $row3['id'] ?>" class="alert-secondary" style="text-decoration: none">
+          <div class="card">
+              <div class="card-image">
+                  <img src="images/card2.png" width="100" height="100" class="responsive-img img-fluid">
+              </div>
+              <div class="card-content">
+                  <br>
+                  <p><?php echo $row3['title']; ?></p>
+                  <p><?php echo "Author: ".$row3['last_name']." ".$row3['first_name']; ?></p>
+
+              </div>
+
+          </div>
+          </a>
+
+        <?php } ?>
+
+
+
       </center>
     </div>
   </div>
 </div>
+
+<?php } ?>
+
 
 <br><br><br>
 
