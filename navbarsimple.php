@@ -83,15 +83,16 @@
             </div>
         </div>
         <div class="search" <?php if (strpos($_SERVER["SCRIPT_NAME"],"index.php")): ?> style="display: none" <?php endif; ?> >
+            <form class='form-inline' action="searchFunc.php" method="post">
             <input type="text"
-                   placeholder=" Search "
+                   placeholder=" Scooby Doo "
                    name="search">
-            <a id="search" type="button" class="btn-light" href="articles.php">
-                <i class="fa fa-search"
-                   style="font-size:18px;">
-                </i>
+                <button id="search-this" type="submit"  class="btn-light">
+                    <i class="fa fa-search"
+                       style="font-size:18px;">
+                    </i>
+                </button>
 
-            </a>
             </form>
         </div>
     </div>

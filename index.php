@@ -33,13 +33,13 @@
         $sql2 = "SELECT * FROM Articles";
         $result2 = mysqli_query($conn, $sql2);
 
-        $sqlcogsci = "SELECT * FROM Articles INNER JOIN Users ON Users_id=Users.id WHERE subject='Cognitive Science' ORDER BY Articles.id DESC ";
+        $sqlcogsci = "SELECT * FROM Users INNER JOIN Articles ON Users_id=Users.id WHERE subject='Cognitive Science' ORDER BY Articles.id DESC ";
         $resultcogsci = mysqli_query($conn, $sqlcogsci);
 
-        $sqlmath = "SELECT * FROM Articles INNER JOIN Users ON Users_id=Users.id WHERE subject='Mathematics' ORDER BY Articles.id DESC ";;
+        $sqlmath = "SELECT * FROM Users INNER JOIN Articles ON Users_id=Users.id WHERE subject='Mathematics' ORDER BY Articles.id DESC ";;
         $resultmath = mysqli_query($conn, $sqlmath);
 
-        $sqlchem = "SELECT * FROM Articles INNER JOIN Users ON Users_id=Users.id WHERE subject='Chemistry' ORDER BY Articles.id DESC ";
+        $sqlchem = "SELECT * FROM Users INNER JOIN Articles  ON Users_id=Users.id WHERE subject='Chemistry' ORDER BY Articles.id DESC ";
         $resultchem = mysqli_query($conn, $sqlchem);
 
 
@@ -64,7 +64,7 @@
     <!-- The slideshow/carousel -->
     <div class="carousel-inner">
         <div class="carousel-item active" >
-            <img src="images/cognitive.jpg" alt="Los Angeles" class="d-block w-100" width="125" height="700">
+            <img src="images/cognitive Science.jpg" alt="Los Angeles" class="d-block w-100" width="125" height="700">
             <div class="carousel-caption" id="carItem">
                 <div class="valign-wrapper">
                     <div class="container">
@@ -210,13 +210,13 @@
 
 <div class="container">
     <div id="content">
-        <form class='form-inline'>
+        <form class='form-inline' action="searchFunc.php" method="post">
             <div class="input-group">
-                <input type='text' id="search" class="form-control search-form" placeholder="Scooby Doo">
+                <input type='text' id="search" name="search" class="form-control search-form" placeholder="Scooby Doo">
                 <span class="input-group-btn" style="width:39px">
-              <a id="search-this" type="button"  class="pull-right btn btn-default search-btn" href="articles.php">
+              <button id="search-this" type="submit"  class=" btn btn-default search-btn">
                   <i class="fa fa-search" ></i>
-              </a>
+              </button>
             </span>
             </div>
         </form>

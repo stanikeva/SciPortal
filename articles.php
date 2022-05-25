@@ -30,8 +30,16 @@
     $url = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
     $_SESSION['url']=$url;
 
-    $subject = $_GET['subject'];
-    $sql = "SELECT * FROM Articles WHERE subject='$subject'";
+    if (isset($_GET['subject']))
+    {
+        $subject = $_GET['subject'];
+        $sql = "SELECT * FROM Articles WHERE subject='$subject'";
+    }
+    else if(isset($_GET['search']))
+    {
+        $sql = "SELECT * FROM Articles_search";
+    }
+
     $result = mysqli_query($conn, $sql);
 ?>
 

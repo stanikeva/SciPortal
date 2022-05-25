@@ -53,7 +53,7 @@
         $row2 = mysqli_fetch_assoc($result2);
 
         $subject = $row['subject'];
-        $sql3 = "SELECT * FROM Articles INNER JOIN Users ON Users_id=Users.id WHERE subject='$subject' AND Articles.id!='$art_id'";
+        $sql3 = "SELECT * FROM Users INNER JOIN Articles ON Users_id=Users.id WHERE subject='$subject' AND Articles.id!='$art_id'";
         $result3 = mysqli_query($conn,$sql3);
 
     ?>
