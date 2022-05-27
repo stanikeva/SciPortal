@@ -99,7 +99,7 @@
           while($rows = mysqli_fetch_assoc($result2))
           {
               ?>
-                  <a href="article.php" class="alert-secondary">
+
                   <div class="container">
                       <div class="row">
                           <div class="col s12 m3">
@@ -110,15 +110,22 @@
                                       </div>
                                       <br>
                                       <div class="card-content">
+                                          <a href="article.php?art_id=<?php echo $rows['id']?>" class="alert-secondary">
+
                                           <p><?php echo $rows['title']; ?></p>
+                                          </a>
+                                          <a class="badge bg-dark a2" href="deleteArticle.php?id=<?php echo $rows['id']?>">Delete article</a>
+
+
                                       </div>
+
                                   </div>
                               </center>
                           </div>
 
                       </div>
                   </div>
-              </a>
+
               <div class="space50"> </div>
 
               <?php
@@ -128,6 +135,7 @@
 
 
         <form id="newArticle" style="display: none"  action="submitArticle.php" method="post">
+
           <div class="form-group">
             <label for="exampleFormControlInput1">Title</label>
             <input class="form-control" id="title" name="title" required=""  placeholder="Title goes here..." >
@@ -152,11 +160,13 @@
             <label for="exampleFormControlTextarea1">Article goes here</label>
               <textarea class="form-control" name="content" required=""  rows="3"></textarea>
 
+              <p class="small-text text-warning">*You may alter the content of a previously submitted article by entering its existing title and subject and inserting the revised content in the   'Article goes here' text area.</p>
               <div class="space50"></div>
             <center>
               <button type="submit" class="btn btn-dark mb-2">Submit Article</button>
             </center>
           </div>
+
         </form>
 
         <table class="table" id="pendingArticles" style="display: none; margin-left: 45px">

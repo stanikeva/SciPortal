@@ -11633,3 +11633,9 @@ p,h3{
   text-decoration: none !important;
   color: #f0f0f0 !important;
 }
+
+
+.small-text
+{
+  font-size: 12px;
+}
