@@ -32,6 +32,7 @@
 
         $sql2 = "SELECT * FROM Articles";
         $result2 = mysqli_query($conn, $sql2);
+        $_SESSION['Articles']= mysqli_num_rows($result2);
 
         $sqlcogsci = "SELECT * FROM Users INNER JOIN Articles ON Users_id=Users.id WHERE subject='Cognitive Science' ORDER BY Articles.id DESC ";
         $resultcogsci = mysqli_query($conn, $sqlcogsci);
@@ -246,7 +247,7 @@
             <div class="col-md-4">
                 <p class="fa fa-laptop fa-4x"></p>
                 <h4 class="my-3">Articles</h4>
-                <h1><?php echo mysqli_num_rows($result2) ?></h1>
+                <h1><?php echo $_SESSION['Articles'] ?></h1>
             </div>
         </div>
     </div>

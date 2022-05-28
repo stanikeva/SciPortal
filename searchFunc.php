@@ -33,6 +33,9 @@
             header('Location: articles.php?search=true;');
 
         }
-
+        if (mysqli_num_rows($result_search)==0)
+        {
+            header('Location: articles.php?search=true');
+        }
     }
 
