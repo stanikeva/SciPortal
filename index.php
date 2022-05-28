@@ -65,13 +65,17 @@
     <!-- The slideshow/carousel -->
     <div class="carousel-inner">
         <div class="carousel-item active" >
-            <img src="images/cognitive Science.jpg" alt="Los Angeles" class="d-block w-100" width="125" height="700">
+            <img src="images/cognitive Science.jpg" alt="cognitive science image" class="d-block w-100" width="125" height="700">
             <div class="carousel-caption" id="carItem">
                 <div class="valign-wrapper">
                     <div class="container">
                         <div class="row">
                             <?php
-                                for ($x = 0; $x<4;$x++)
+                            if (mysqli_num_rows($resultcogsci)<4)
+                                $y=mysqli_num_rows($resultcogsci);
+                            else
+                                $y=4;
+                                for ($x = 0; $x<$y;$x++)
                                 {
                                     $rowcogsci = mysqli_fetch_assoc($resultcogsci);
 
@@ -108,13 +112,17 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="images/mathematics.jpg" alt="Chicago" class="d-block w-100" width="125" height="700">
+            <img src="images/mathematics.jpg" alt="math image" class="d-block w-100" width="125" height="700">
             <div class="carousel-caption ">
                 <div class="valign-wrapper">
                     <div class="container">
                         <div class="row">
                             <?php
-                            for ($x = 0; $x<4;$x++)
+                            if (mysqli_num_rows($resultmath)<4)
+                                $y=mysqli_num_rows($resultmath);
+                            else
+                                $y=4;
+                            for ($x = 0; $x<$y;$x++)
                             {
                                 $rowmath = mysqli_fetch_assoc($resultmath);
 
@@ -154,7 +162,11 @@
                     <div class="container">
                         <div class="row">
                             <?php
-                            for ($x = 0; $x<4;$x++)
+                            if (mysqli_num_rows($resultchem)<4)
+                                $y=mysqli_num_rows($resultchem);
+                            else
+                                $y=4;
+                                for ($x = 0; $x<$y;$x++)
                             {
                                 $rowchem = mysqli_fetch_assoc($resultchem);
 

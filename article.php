@@ -43,6 +43,10 @@
     else
     {
         $art_id=$_GET['art_id'];
+
+
+
+
         $sql = "SELECT * FROM Articles WHERE id='$art_id'";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_assoc($result);

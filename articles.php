@@ -39,6 +39,10 @@
     {
         $sql = "SELECT * FROM Articles_search";
     }
+    else if(isset($_GET['error']))
+    {
+        $sql = "SELECT * FROM Articles_search WHERE 1=0";
+    }
 
     $result = mysqli_query($conn, $sql);
 ?>
@@ -47,7 +51,12 @@
 
 <div class="space50"></div>
     <center>
+        <?php if (mysqli_num_rows($result))
+            { ?>
         <h3>Results:</h3>
+        <?php  }
+        else {?> <h3>No results found</h3><?php } ?>
+
     </center>
 <div class="space50"></div>
 
@@ -113,19 +122,7 @@
 
 <div class="space"></div>
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-        </li>
-        <li class="page-item"><a class="btn btn-outline-dark" class="page-link"  href="#">1</a></li>
-        <li class="page-item"><a class="btn btn-outline-dark" href="#">2</a></li>
-        <li class="page-item"><a class="btn btn-outline-dark" href="#">3</a></li>
-        <li class="page-item">
-            <a class="btn btn-outline-dark" href="#">Next</a>
-        </li>
-    </ul>
-</nav>
+
 
 <br><br><br>
 

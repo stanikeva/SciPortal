@@ -35,7 +35,7 @@
         $result2 = mysqli_query($conn, $sql2);
         $sql3="SELECT * FROM Pending_articles";
         $result3 = mysqli_query($conn, $sql3);
-        $sql4="SELECT * FROM users";
+        $sql4="SELECT * FROM users WHERE id!='0'";
         $result4= mysqli_query($conn, $sql4);
       $sql5 = "SELECT * FROM Articles ";
       $result5 = mysqli_query($conn, $sql5);
@@ -206,7 +206,7 @@
       </div>
     </div>
   </div>
-<?php } else if ($_SESSION['id']==0){  echo $_SESSION['id']?>
+<?php } else if ($_SESSION['id']==0){?>
 
          <div class="container">
              <div class="row">
@@ -244,7 +244,7 @@
 
             <div class="valign-wrapper" id="ApproveArticles" style="display: none">
                 <?php
-                while($rows = mysqli_fetch_assoc($result3))
+                while($rows3 = mysqli_fetch_assoc($result3))
                 {
                     ?>
 
@@ -258,11 +258,11 @@
                                         </div>
                                         <br>
                                         <div class="card-content">
-                                            <a href="article.php?art_id=<?php echo $rows['id']?>" class="alert-secondary">
+                                            <a href="previewArticle.php?art_id=<?php echo $rows3['id']?> " target="_blank" class="alert-secondary">
 
-                                                <p><?php echo $rows['title']; ?></p>
+                                                <p><?php echo $rows3['title']; ?></p>
                                             </a>
-                                            <a class="badge bg-dark a2" href="approveArticle.php?id=<?php echo $rows['id']?>">Approve</a>
+                                            <a class="badge bg-dark a2" href="approveArticles.php?id=<?php echo $rows3['id']?>">Approve</a>
 
 
                                         </div>
@@ -339,7 +339,7 @@
                         <td><?php echo $counter?></td>
                         <td><?php echo $row['first_name'];?></td>
                         <td><?php echo $row['last_name'];?></td>
-                        <td><a class="badge bg-dark a2" href="" >Delete User</a></td>
+                        <td><a class="badge bg-dark a2" href="deleteUser.php?id=<?php echo $row['id']?>" >Delete User</a></td>
                     </tr>
 
                     <?php
