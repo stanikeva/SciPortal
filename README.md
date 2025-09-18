@@ -28,3 +28,7 @@ to publish, discover, and engage with scientific content.
 ![New Article Form](images/new_article.png)
 
 ![Pending Approval](images/pending_approval.png)
+
+### 🗃️ Database Entities-Relations Diagram
+
+![ER Diagram](images/accounts-er-diagram.png)
