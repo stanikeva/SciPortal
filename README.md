@@ -15,7 +15,7 @@ to publish, discover, and engage with scientific content.
 ![Home](images/home.png)
 
 ### 📄 Article Search Result
-![Articles](images/aricles.png)
+![Articles](images/articles.png)
 
 ### 📖 Article
 ![Article](images/article.png)
